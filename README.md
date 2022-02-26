@@ -1,2 +1,2 @@
-# Algorithms
-Algorithms in Java and Kotlin
+# algorithms
+algorithms in Java and Kotlin
