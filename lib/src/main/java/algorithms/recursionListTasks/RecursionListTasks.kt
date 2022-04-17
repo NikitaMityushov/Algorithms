@@ -44,3 +44,23 @@ fun maxListNumber(list: List<Int?>): Int? {
         }
     }
 }
+
+/**
+ * Quick sort implementation
+ * <T : Comparable<T>> type.
+ */
+fun <T : Comparable<T>> quickSort(list: List<T>): List<T> {
+    // Base case
+    return if (list.size < 2) {
+        list
+        // Recursive case
+    } else {
+        val index = list.size /  2
+        val pivot = list[index]
+
+        val greater = list.filter { it > pivot }
+        val lower = list.filter { it <= pivot }
+
+        quickSort(lower.slice(0 until lower.size - 1)) + pivot + quickSort(greater)
+    }
+}
